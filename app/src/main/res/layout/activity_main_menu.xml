@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainMenuActivity"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logoImageView"
+            android:src="@drawable/logo_ahorramas"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buy_button"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:drawableLeft="@drawable/cart_icon"
+            android:id="@+id/buyButton"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:background="@drawable/button_shape_red"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_button"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:drawableLeft="@drawable/info_icon"
+            android:id="@+id/infoButton"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:background="@drawable/button_shape_red"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_button"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:drawableLeft="@drawable/user_icon"
+            android:id="@+id/userButton"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:background="@drawable/button_shape_red"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_button"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:drawableLeft="@drawable/help_icon"
+            android:id="@+id/helpButton"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:background="@drawable/button_shape_green"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

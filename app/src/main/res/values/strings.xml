@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ahorramas</string>
+    <string name="title_activity_login">Acceso clientes</string>
+
+    <!-- MainMenu strings -->
+    <string name="buy_button">Comprar</string>
+    <string name="info_button">Información</string>
+    <string name="user_button">Cliente</string>
+    <string name="help_button">Ayuda</string>
+
+    <!-- Login strings -->
+    <string name="email_text">Email : </string>
+    <string name="email_text_hint">Tu dirección email</string>
+    <string name="password_text">Contraseña : </string>
+    <string name="password_text_hint">Tu contraseña</string>
+    <string name="login_button">Acceder</string>
+    <string name="error_invalid_password">Contraseña incorrecta</string>
+</resources>
