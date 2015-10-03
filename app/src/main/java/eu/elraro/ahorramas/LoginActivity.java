@@ -11,9 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,20 +42,26 @@ public class LoginActivity extends AppCompatActivity {
         emailText = (EditText) findViewById(R.id.emailEditText);
         passwordText = (EditText) findViewById(R.id.passwordEditText);
 
-
-        // Force input emailEditText
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(emailText, InputMethodManager.SHOW_IMPLICIT);
-
         loginButton = (Button) findViewById(R.id.buttonLogin);
         loginButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Force hide keyboard
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 attemptLogin();
             }
         });
 
         mProgressView = findViewById(R.id.login_progress);
+        mLoginFormView = findViewById(R.id.login_form);
+
+        // Force show keyboard
+        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
+
+        //showSoftInput es para cuando esta oculto, es decir, me vale abajo a la hora de mostrar error, por ejemplo
+        //sigue sin ir :/
     }
 
     /**
@@ -90,19 +98,19 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
+            showError(getString(R.string.error_invalid_password));
+            focusView = passwordText;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
+            showError(getString(R.string.error_field_required));
+            focusView = emailText;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
+            showError(getString(R.string.error_invalid_email));
+            focusView = emailText;
             cancel = true;
         }
 
@@ -117,6 +125,11 @@ public class LoginActivity extends AppCompatActivity {
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
+    }
+
+    private void showError(String error) {
+        Toast toast = Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG);
+        toast.show();
     }
 
     private boolean isEmailValid(String email) {
@@ -209,7 +222,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             } else {
               //  mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+                //mPasswordView.requestFocus();
             }
         }
 

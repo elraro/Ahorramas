@@ -15,4 +15,6 @@
     <string name="password_text_hint">Tu contraseña</string>
     <string name="login_button">Acceder</string>
     <string name="error_invalid_password">Contraseña incorrecta</string>
+    <string name="error_invalid_email">Correo no válido</string>
+    <string name="error_field_required">Debe rellenar los campos</string>
 </resources>
