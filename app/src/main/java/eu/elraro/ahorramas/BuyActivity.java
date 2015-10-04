@@ -1,33 +1,147 @@
 package eu.elraro.ahorramas;
 
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
 public class BuyActivity extends AppCompatActivity {
+    GridView grid;
+    String[] web = {
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales",
+            "Plátano",
+            "Filete ternera",
+            "Pan Bimbo",
+            "Mermelada",
+            "Celeales"
 
-    private FragmentTabHost tabHost;
+
+    } ;
+    int[] imageId = {
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales,
+            R.drawable.platanos,
+            R.drawable.filetes,
+            R.drawable.pan_bimbo,
+            R.drawable.mermelada,
+            R.drawable.cereales
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
 
-        tabHost = (FragmentTabHost) findViewById(R.id.tab_host);
-        tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
-        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Lengüeta 1"),
-                ListTabBuyActivity.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Lengüeta 2"),
-                ListTabBuyActivity.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Lengüeta 3"),
-                ListTabBuyActivity.class, null);
-
         setupActionBar();
+
+        CustomGrid adapter = new CustomGrid(BuyActivity.this, web, imageId);
+        grid=(GridView)findViewById(R.id.grid);
+        grid.setAdapter(adapter);
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Toast.makeText(BuyActivity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
     /**
@@ -54,4 +168,24 @@ public class BuyActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Si no realizas la compra perderás todo lo añadido a la cesta")
+                .setCancelable(false)
+                .setPositiveButton("Sí, salir", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        BuyActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No, continuar comprando", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setIconAttribute(android.R.attr.alertDialogIcon)
+                .show();
+    }
+
 }

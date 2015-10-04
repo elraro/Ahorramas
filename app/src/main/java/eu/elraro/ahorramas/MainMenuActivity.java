@@ -56,7 +56,7 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
         buyButton = (Button) findViewById(R.id.buyButton);
-        buyButton.setOnClickListener(new View.OnClickListener(){
+        buyButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -97,5 +97,24 @@ public class MainMenuActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        new android.support.v7.app.AlertDialog.Builder(this)
+                .setMessage("¿Deseas salir?")
+                .setCancelable(false)
+                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainMenuActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setIconAttribute(android.R.attr.alertDialogIcon)
+                .show();
     }
 }
