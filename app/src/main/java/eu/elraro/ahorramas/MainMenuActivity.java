@@ -60,7 +60,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if (!logged) {
+                /*if (!logged) {
                     new AlertDialog.Builder(MainMenuActivity.this)
                             .setTitle("Error")
                             .setMessage("Necesitas entrar en tu cuenta de usuario antes de comprar")
@@ -73,12 +73,12 @@ public class MainMenuActivity extends AppCompatActivity {
                             })
                             .setIconAttribute(android.R.attr.alertDialogIcon)
                             .show();
-                } else {
+                } else {*/
                     // User is logged
                     Intent buyActivity = new Intent().setClass(
                             MainMenuActivity.this, BuyActivity.class);
                     startActivity(buyActivity);
-                }
+                //}
             }
         });
     }

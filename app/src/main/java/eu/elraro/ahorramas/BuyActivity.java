@@ -137,7 +137,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(BuyActivity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(BuyActivity.this, "Has comprado " +web[+ position], Toast.LENGTH_SHORT).show();
 
             }
         });
