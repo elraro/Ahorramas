@@ -3,12 +3,15 @@ package eu.elraro.ahorramas;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -32,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
 
+    private InputMethodManager inputManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +47,14 @@ public class LoginActivity extends AppCompatActivity {
         emailText = (EditText) findViewById(R.id.emailEditText);
         passwordText = (EditText) findViewById(R.id.passwordEditText);
 
+        // Set up the keyboard
+        inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         loginButton = (Button) findViewById(R.id.buttonLogin);
         loginButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Force hide keyboard
-                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 attemptLogin();
             }
@@ -57,11 +64,13 @@ public class LoginActivity extends AppCompatActivity {
         mLoginFormView = findViewById(R.id.login_form);
 
         // Force show keyboard
-        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
-
-        //showSoftInput es para cuando esta oculto, es decir, me vale abajo a la hora de mostrar error, por ejemplo
-        //sigue sin ir :/
+        emailText.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                emailText.requestFocus();
+                inputManager.showSoftInput(emailText, 0);
+            }
+        }, 100);
     }
 
     /**
@@ -76,13 +85,24 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // Make HOME icon dont destroy MainMenuActivity
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
-     */
-    /*
-    * http://developer.android.com/reference/android/text/TextUtils.html
+     * http://developer.android.com/reference/android/text/TextUtils.html
      */
     private void attemptLogin() {
         if (mAuthTask != null) {
@@ -192,8 +212,6 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
@@ -209,7 +227,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
-            // TODO: register the new account here.
             return false;
         }
 
@@ -219,10 +236,13 @@ public class LoginActivity extends AppCompatActivity {
             showProgress(false);
 
             if (success) {
+                showError(getString(R.string.correct_password));
+                setResult(Activity.RESULT_OK,
+                        new Intent().putExtra("logged", true));
                 finish();
             } else {
-              //  mPasswordView.setError(getString(R.string.error_incorrect_password));
-                //mPasswordView.requestFocus();
+                showError(getString(R.string.error_invalid_password));
+                passwordText.requestFocus();
             }
         }
 

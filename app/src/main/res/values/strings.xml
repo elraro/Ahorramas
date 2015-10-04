@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Ahorramas</string>
     <string name="title_activity_login">Acceso clientes</string>
+    <string name="title_help">Ayuda al usuario</string>
 
     <!-- MainMenu strings -->
     <string name="buy_button">Comprar</string>
@@ -17,4 +18,6 @@
     <string name="error_invalid_password">Contraseña incorrecta</string>
     <string name="error_invalid_email">Correo no válido</string>
     <string name="error_field_required">Debe rellenar los campos</string>
+    <string name="correct_password">Contraseña correcta</string>
+    <string name="account_button">Tu cuenta</string>
 </resources>
