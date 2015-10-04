@@ -3,13 +3,13 @@
     <string name="title_activity_login">Acceso clientes</string>
     <string name="title_help">Ayuda al usuario</string>
 
-    <!-- MainMenu strings -->
+    <!-- MainMenu -->
     <string name="buy_button">Comprar</string>
     <string name="info_button">Información</string>
     <string name="user_button">Cliente</string>
     <string name="help_button">Ayuda</string>
 
-    <!-- Login strings -->
+    <!-- Login -->
     <string name="email_text">Email : </string>
     <string name="email_text_hint">Tu dirección email</string>
     <string name="password_text">Contraseña : </string>
@@ -20,4 +20,14 @@
     <string name="error_field_required">Debe rellenar los campos</string>
     <string name="correct_password">Contraseña correcta</string>
     <string name="account_button">Tu cuenta</string>
+
+    <!-- User preference -->
+    <string name="prefer_user">Preferencias de usuario</string>
+    <string name="prefer_show">Mostrar</string>
+    <string name="notifications_title">Activar notificaciones</string>
+    <string name="notifications_summary">Activa las notificaciones de la aplicación, donde se muestran ofertas</string>
+    <string name="user_name_title">Nombre de cliente</string>
+    <string name="user_name_summary">Modifica el nombre de cliente</string>
+    <string name="user_name_dialog">Introduce tu nombre</string>
+    <string name="title_activity_user_preference">Configuración</string>
 </resources>

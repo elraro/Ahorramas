@@ -23,7 +23,8 @@
             android:parentActivityName=".MainMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="eu.elraro.ahorramas.MainMenuActivity" />>
+                android:value="eu.elraro.ahorramas.MainMenuActivity" />
+>
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -32,6 +33,18 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.elraro.ahorramas.MainMenuActivity" />
+        </activity>
+        <activity
+            android:name=".UserPreferenceActivity"
+            android:label="@string/title_activity_user_preference"
+            android:parentActivityName=".MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.elraro.ahorramas.MainMenuActivity" />
+        </activity>
+        <activity android:name=".BuyActivity" >
+        </activity>
+        <activity android:name=".ListTabBuyActivity" >
         </activity>
     </application>
 

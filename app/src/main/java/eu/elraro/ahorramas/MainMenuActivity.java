@@ -48,7 +48,9 @@ public class MainMenuActivity extends AppCompatActivity {
                             MainMenuActivity.this, LoginActivity.class);
                     startActivityForResult(loginActivity, REQUEST_GET_USER);
                 } else {
-                    logged = false;
+                    Intent userPreferenceActivity = new Intent().setClass(
+                            MainMenuActivity.this, UserPreferenceActivity.class);
+                    startActivity(userPreferenceActivity);
                 }
             }
         });
@@ -73,6 +75,9 @@ public class MainMenuActivity extends AppCompatActivity {
                             .show();
                 } else {
                     // User is logged
+                    Intent buyActivity = new Intent().setClass(
+                            MainMenuActivity.this, BuyActivity.class);
+                    startActivity(buyActivity);
                 }
             }
         });

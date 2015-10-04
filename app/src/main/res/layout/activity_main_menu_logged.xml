@@ -34,20 +34,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:background="@drawable/button_shape_red"
-            android:layout_marginTop="20dp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/info_button"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:drawableLeft="@drawable/info_icon"
-            android:id="@+id/infoButton"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:background="@drawable/button_shape_red"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="60dp"/>
 
         <Button
             android:layout_width="wrap_content"
