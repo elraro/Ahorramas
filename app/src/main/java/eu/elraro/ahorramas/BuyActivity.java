@@ -1,7 +1,9 @@
 package eu.elraro.ahorramas;
 
+
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -9,12 +11,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class BuyActivity extends AppCompatActivity {
-    GridView grid;
-    String[] web = {
+    private GridView grid;
+    private Button buyButton;
+    private String[] food = {
             "Plátano",
             "Filete ternera",
             "Pan Bimbo",
@@ -68,7 +74,7 @@ public class BuyActivity extends AppCompatActivity {
 
 
     } ;
-    int[] imageId = {
+    private int[] foodImageId = {
             R.drawable.platanos,
             R.drawable.filetes,
             R.drawable.pan_bimbo,
@@ -122,14 +128,18 @@ public class BuyActivity extends AppCompatActivity {
 
     };
 
+    private ArrayList<String> cart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
 
+        cart = new ArrayList<String>();
+
         setupActionBar();
 
-        CustomGrid adapter = new CustomGrid(BuyActivity.this, web, imageId);
+        CustomGrid adapter = new CustomGrid(BuyActivity.this, food, foodImageId);
         grid=(GridView)findViewById(R.id.grid);
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -137,8 +147,20 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(BuyActivity.this, "Has comprado " +web[+ position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(BuyActivity.this, "Has comprado " + food[+position], Toast.LENGTH_SHORT).show();
+                cart.add(food[+position]);
+            }
+        });
 
+        buyButton = (Button) findViewById(R.id.buyButton);
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuyActivity.this, FinishBuyActivity.class);
+                Bundle b = new Bundle();
+                b.putStringArrayList("cart", cart);
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
 
