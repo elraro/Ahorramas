@@ -30,4 +30,5 @@
     <string name="user_name_summary">Modifica el nombre de cliente</string>
     <string name="user_name_dialog">Introduce tu nombre</string>
     <string name="title_activity_user_preference">Configuración</string>
+    <string name="help1">Te damos la bienvenida al servicio de ayuda de Ahorramas.</string>
 </resources>

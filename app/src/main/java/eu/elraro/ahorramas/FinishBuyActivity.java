@@ -44,7 +44,7 @@ public class FinishBuyActivity extends AppCompatActivity {
         totalItems = (TextView) findViewById(R.id.totalItemsTextView);
         totalItems.setText("Objetos: " + countTotalItems);
         totalPrice = (TextView) findViewById(R.id.totalPriceTextView);
-        totalPrice.setText("Total: " + countTotalPrince);
+        totalPrice.setText("Total: " + countTotalPrince + " €");
 
         Toast.makeText(FinishBuyActivity.this, "Gracias por su compra", Toast.LENGTH_SHORT).show();
     }

@@ -12,7 +12,6 @@
         <activity android:name=".SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -37,7 +36,7 @@
         <activity
             android:name=".UserPreferenceActivity"
             android:label="@string/title_activity_user_preference"
-            android:parentActivityName=".MainMenuActivity" >
+            android:parentActivityName=".MainMenuActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.elraro.ahorramas.MainMenuActivity" />
