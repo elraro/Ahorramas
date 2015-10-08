@@ -4,14 +4,13 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class FinishBuyActivity extends AppCompatActivity {
 
-    private ArrayList<String> cart;
     private ListView cartListView;
 
     @Override
@@ -19,12 +18,17 @@ public class FinishBuyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish_buy);
 
-        Bundle b = getIntent().getExtras();
-        cart = b.getStringArrayList("cart");
+        Globals g = (Globals)getApplication();
+        Map<Item,Integer> cart = g.getCart();
+
+        ArrayList<Item> finalCart = new ArrayList<Item>();
+
+        for (Item key : cart.keySet()) {
+            finalCart.add(new Item(key.getPhoto(), key.getName(), key.getPrice(), key.getQuantity()));
+        }
 
         cartListView = (ListView) findViewById(R.id.cartListView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, cart);
+        CustomFinishBuyList adapter = new CustomFinishBuyList(FinishBuyActivity.this, finalCart);
         cartListView.setAdapter(adapter);
     }
 
