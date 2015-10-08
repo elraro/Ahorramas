@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.Map;
+
 public class MainMenuActivity extends AppCompatActivity {
 
     // Buttons
@@ -23,7 +25,15 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+
+        Globals g = (Globals)getApplication();
+        logged = g.getLogged();
+
+        if (logged) {
+            setContentView(R.layout.activity_main_menu_logged);
+        } else {
+            setContentView(R.layout.activity_main_menu);
+        }
 
         generate();
     }
@@ -60,7 +70,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                /*if (!logged) {
+                if (!logged) {
                     new AlertDialog.Builder(MainMenuActivity.this)
                             .setTitle("Error")
                             .setMessage("Necesitas entrar en tu cuenta de usuario antes de comprar")
@@ -73,12 +83,12 @@ public class MainMenuActivity extends AppCompatActivity {
                             })
                             .setIconAttribute(android.R.attr.alertDialogIcon)
                             .show();
-                } else {*/
+                } else {
                     // User is logged
                     Intent buyActivity = new Intent().setClass(
                             MainMenuActivity.this, BuyActivity.class);
                     startActivity(buyActivity);
-                //}
+                }
             }
         });
     }
@@ -92,6 +102,8 @@ public class MainMenuActivity extends AppCompatActivity {
                 boolean logged = data.getBooleanExtra("logged", false);
                 if (logged) {
                     this.logged = true;
+                    Globals g = (Globals)getApplication();
+                    g.setLogged(true);
                     setContentView(R.layout.activity_main_menu_logged);
                     generate();
                 }

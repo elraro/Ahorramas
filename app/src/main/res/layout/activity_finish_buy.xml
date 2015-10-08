@@ -1,16 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
     tools:context="eu.elraro.ahorramas.FinishBuyActivity">
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/cartListView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
 
-</RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/totalItemsTextView"
+            android:text="Total items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:id="@+id/totalPriceTextView"
+            android:text="Right Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="right"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -66,6 +67,7 @@ public class BuyActivity extends AppCompatActivity {
                 if (cart.containsKey(list.get(position))) {
                     cart.put(list.get(position), cart.get(list.get(position)) + 1);
                 } else {
+                    //Log.d("debug", list.get(position).toString());
                     cart.put(list.get(position), 1);
                 }
             }
@@ -79,6 +81,7 @@ public class BuyActivity extends AppCompatActivity {
                 Globals g = (Globals)getApplication();
                 g.setCart(cart);
                 startActivity(intent);
+                finish(); //No podemos volver hacia atrás
             }
         });
 
