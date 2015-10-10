@@ -2,139 +2,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="#fff"
-    tools:context="eu.elraro.ahorramas.HelpActivity">
+    tools:context="eu.elraro.ahorramas.eu.elraro.ahorramas.activity.HelpActivity">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/scrollView">
+        android:layout_height="fill_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:paddingTop="20dp"
                 android:text="@string/help1"
-                android:paddingTop="20dp" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:paddingTop="20dp"
                 android:text="A continuación explicaremos como funciona la aplicación y las diferentes opciones disponibles."
-                android:paddingTop="20dp" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Menú principal"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp"
-                android:paddingTop="20dp"
-                android:textStyle="bold"
-                android:text="Menú principal" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:paddingTop="20dp"
                 android:text="Desde el menú principal puede acceder a las opciones de Comprar, Cliente/Tu cuenta dependiendo si has o no entrado a tu cuenta de usuario y a Ayuda (en la que estamos actualmente)."
-                android:paddingTop="20dp" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/menu_principal"
                 android:adjustViewBounds="true"
-                android:paddingTop="20dp" />
+                android:paddingTop="20dp"
+                android:src="@drawable/menu_principal" />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Comprar"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp"
-                android:paddingTop="20dp"
-                android:textStyle="bold"
-                android:text="Comprar"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:paddingTop="20dp"
                 android:text="Comprar es muy sencillo, pero antes, debes entrar con tu usuario y contraseña. Si no lo has hecho, te saldrá un mensaje de error y serás redireccionado al login de usuarios."
-                android:paddingTop="20dp" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/error_usuario"
                 android:adjustViewBounds="true"
-                android:paddingTop="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:paddingTop="20dp"
-                android:text="Podemos entrar a nuestra cuenta con a@a.com como usuario y 'prueba' (sin comillas) como contraseña." />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/login_usuario"
-                android:adjustViewBounds="true"
-                android:paddingTop="20dp" />
+                android:src="@drawable/error_usuario" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:paddingTop="20dp"
-                android:text="Para comprar, simplemente debes pulsar sobre el objeto que deseas comprar. Si deseas cancelar la compra, puedes usar el menu superior o pulsar el botón atrás de tu movil." />
+                android:text="Podemos entrar a nuestra cuenta con a@a.com como usuario y 'prueba' (sin comillas) como contraseña."
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/menu_comprar"
                 android:adjustViewBounds="true"
-                android:paddingTop="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:paddingTop="20dp"
-                android:text="Una vez hemos terminado de añadir al carro, pulsamos sobre el botón Comprar y seremos redireccionados al listado de compra, finalizando el proceso." />
+                android:src="@drawable/login_usuario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Para comprar, simplemente debes pulsar sobre el objeto que deseas comprar. Si deseas cancelar la compra, puedes usar el menu superior o pulsar el botón atrás de tu movil."
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/finalizar_compra"
                 android:adjustViewBounds="true"
-                android:paddingTop="20dp" />
+                android:paddingTop="20dp"
+                android:src="@drawable/menu_comprar" />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Una vez hemos terminado de añadir al carro, pulsamos sobre el botón Comprar y seremos redireccionados al listado de compra, finalizando el proceso."
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingTop="20dp"
+                android:src="@drawable/finalizar_compra" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Preferencias de usuario"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp"
-                android:paddingTop="20dp"
-                android:textStyle="bold"
-                android:text="Preferencias de usuario"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:paddingTop="20dp"
-                android:text="Desde las preferencias de usuario podemos cambiar nuestro nombre de usuario, la forma de ordenar los productos a la hora de comprar o activar las notificaciones de la aplicación, informando de las ultimas novedades (opción no disponible actualmente)." />
+                android:text="Desde las preferencias de usuario podemos cambiar nuestro nombre de usuario, la forma de ordenar los productos a la hora de comprar o activar las notificaciones de la aplicación, informando de las ultimas novedades (opción no disponible actualmente)."
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingTop="20dp"
+                android:src="@drawable/ayuda" />
 
 
         </LinearLayout>

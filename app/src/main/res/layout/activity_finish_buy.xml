@@ -4,36 +4,37 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context="eu.elraro.ahorramas.FinishBuyActivity">
+    tools:context="eu.elraro.ahorramas.eu.elraro.ahorramas.activity.FinishBuyActivity">
 
     <ListView
         android:id="@+id/cartListView"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/totalItemsTextView"
-            android:text="Total items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="left"
+            android:paddingBottom="10dp"
             android:paddingLeft="10dp"
-            android:paddingBottom="10dp" />
+            android:text="Total items"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/totalPriceTextView"
-            android:text="Right Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="right"
+            android:paddingBottom="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="10dp" />
+            android:text="Right Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </FrameLayout>
 
 </LinearLayout>

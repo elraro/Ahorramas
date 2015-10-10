@@ -1,21 +1,20 @@
 package eu.elraro.ahorramas;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class Item implements Parcelable{
+public class Item {
 
     private int photo;
     private String name;
     private double price;
     private int quantity;
+    private double valuation;
     private long id;
 
-    public Item(int photo, String name, double price, int quantity) {
+    public Item(int photo, String name, double price, int quantity, double valuation) {
         this.photo = photo;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.valuation = valuation;
     }
 
     public int getPhoto() {
@@ -58,36 +57,12 @@ public class Item implements Parcelable{
         this.quantity = quantity;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public double getValuation() {
+        return valuation;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.photo);
-        dest.writeString(this.name);
-        dest.writeDouble(this.price);
-        dest.writeInt(this.quantity);
-        dest.writeLong(this.id);
+    public void setValuation(double valuation) {
+        this.valuation = valuation;
     }
-
-    private Item(Parcel in) {
-        this.photo = in.readInt();
-        this.name = in.readString();
-        this.price = in.readDouble();
-        this.quantity = in.readInt();
-        this.id = in.readLong();
-    }
-
-    public static final Creator<Item> CREATOR = new Creator<Item>() {
-        public Item createFromParcel(Parcel source) {
-            return new Item(source);
-        }
-
-        public Item[] newArray(int size) {
-            return new Item[size];
-        }
-    };
 
 }

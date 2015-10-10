@@ -1,53 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.elraro.ahorramas" >
+    package="eu.elraro.ahorramas">
 
     <application
+        android:name=".GlobalVars"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ahorramas_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".Globals">
-        <activity android:name=".SplashScreenActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".eu.elraro.ahorramas.activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity" >
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".HelpActivity"
+            android:name=".eu.elraro.ahorramas.activity.HelpActivity"
             android:label="@string/title_help"
-            android:parentActivityName=".MainMenuActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="eu.elraro.ahorramas.MainMenuActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".eu.elraro.ahorramas.activity.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainMenuActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="eu.elraro.ahorramas.MainMenuActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".UserPreferenceActivity"
+            android:name=".eu.elraro.ahorramas.activity.UserPreferenceActivity"
             android:label="@string/title_activity_user_preference"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="eu.elraro.ahorramas.MainMenuActivity" />
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".BuyActivity" >
-        </activity>
-        <activity android:name=".FinishBuyActivity"
-            android:parentActivityName=".MainMenuActivity" >
+        <activity android:name=".eu.elraro.ahorramas.activity.BuyActivity"></activity>
+        <activity
+            android:name=".eu.elraro.ahorramas.activity.FinishBuyActivity"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="eu.elraro.ahorramas.MainMenuActivity" />
+                android:value=".MainActivity" />
         </activity>
     </application>
 

@@ -1,62 +1,59 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:background="#fff"
     android:orientation="horizontal"
-    android:padding="5dp"
-    android:background="#fff">
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imageItem"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/mermelada">
-    </ImageView>
+        android:src="@drawable/mermelada"></ImageView>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Medium Text"
             android:id="@+id/nameItem"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
             android:id="@+id/totalItems"
-            android:layout_marginLeft="10dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="right">
+        android:gravity="right"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp" />
-            android:id="@+id/textView2" />
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
+            android:id="@+id/totalPriceItems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/totalPriceItems" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
 </LinearLayout>
