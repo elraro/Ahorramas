@@ -6,7 +6,6 @@
         android:allowBackup="true"
         android:icon="@drawable/ahorramas_icon"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".eu.elraro.ahorramas.activity.SplashScreenActivity">
             <intent-filter>

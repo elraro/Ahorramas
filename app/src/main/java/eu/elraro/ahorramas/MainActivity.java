@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         GlobalVars g = (GlobalVars) getApplication();
-        //logged = g.getLogged();
+        logged = g.getLogged();
 
         // Debug
-        logged = true;
+        //logged = true;
 
         if (logged) {
             setContentView(R.layout.activity_main_menu_logged);
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!logged) {
-                    new AlertDialog.Builder(MainActivity.this)
+                    new android.support.v7.app.AlertDialog.Builder(MainActivity.this)
                             .setTitle("Error")
                             .setMessage("Necesitas entrar en tu cuenta de usuario antes de comprar")
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {

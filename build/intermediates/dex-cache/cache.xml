@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/preference-v7/23.0.1/jars/classes.jar"
+        jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e27d0df01afa01bd384f91a3c41998133e9235a0">
-        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/classes-aa70806f65672d1111c0477e7c3c09b6f33f0973.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/classes-64054a6e37da638d68398a4275b0d5059094904e.jar" />
     </item>
     <item
         jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
@@ -14,6 +14,41 @@
         revision="23.0.1"
         sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
         <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/classes-9dac4a9af1340f2709fe97c37ccde62131306ccc.jar" />
+    </item>
+    <item
+        jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/preference-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e27d0df01afa01bd384f91a3c41998133e9235a0">
+        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/classes-aa70806f65672d1111c0477e7c3c09b6f33f0973.jar" />
+    </item>
+    <item
+        jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/classes-8b29c71c45cc5aa325a4e23e18426591d8480ed2.jar" />
+    </item>
+    <item
+        jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/classes-bc0a693bcc6b59ea305a64d913688ac3833a6ca1.jar" />
+    </item>
+    <item
+        jar="/home/alberto/EclipseNoBorrar/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-76deabd613fa42460eac9fdca11df537c5f9ca1d.jar" />
+    </item>
+    <item
+        jar="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/alberto/AndroidStudioProjects/Ahorramas/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-5322811dc3883239298e9d00e0599f3e19bc2062.jar" />
     </item>
 
 </items>

@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -53,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:paddingTop="20dp"
-                android:src="@drawable/menu_principal" />
+                android:id="@+id/menu_principal"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,7 +77,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:paddingTop="20dp"
-                android:src="@drawable/error_usuario" />
+                android:id="@+id/error_usuario"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:paddingTop="20dp"
-                android:src="@drawable/login_usuario" />
+                android:id="@+id/login_usuario"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +107,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:paddingTop="20dp"
-                android:src="@drawable/menu_comprar" />
+                android:id="@+id/menu_comprar"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,7 +122,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:paddingTop="20dp"
-                android:src="@drawable/finalizar_compra" />
+                android:id="@+id/finalizar_compra"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,7 +146,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:paddingTop="20dp"
-                android:src="@drawable/ayuda" />
+                android:id="@+id/info_ayuda"
+                android:layout_gravity="center_horizontal" />
 
 
         </LinearLayout>
